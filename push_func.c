@@ -5,8 +5,9 @@
  * @ln: line number executed
  * Return : pointer to the new node
  */
-void push_func(stack_t **stack, __attribute__((unused))unsigned int ln)
+void push_func(stack_t **stack, unsigned int ln)
 {
+	int i = 0;
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 	if (new_node == NULL)
@@ -17,6 +18,23 @@ void push_func(stack_t **stack, __attribute__((unused))unsigned int ln)
 	if (*stack != NULL)
 	{
 		(*stack)->prev = new_node;
+	}
+	if (argument == NULL)
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", ln);
+		exit(EXIT_FAILURE);
+	}
+	if (argument[0] == '-')
+	{
+		i++;
+	}
+	for (; argument[i] != '\0' ; i++)
+	{
+		if (isdigit(argument[i]) == 0)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", ln);
+			exit(EXIT_FAILURE);
+		}
 	}
 	new_node->n = atoi(argument);
 	new_node->next = *stack;
