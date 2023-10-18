@@ -1,6 +1,6 @@
-test 1
+push 1
 pint
-push -25
+push 2
 pint
 push 3
 pint

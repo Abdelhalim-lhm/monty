@@ -1,5 +1,4 @@
 push 1
-push -2
-pall
-push z3a
+push 2
+push 3
 pall

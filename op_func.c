@@ -33,6 +33,7 @@ int op_func(stack_t **stack, char *opcode,
 	if (opcode && operation[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 	return (1);

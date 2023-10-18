@@ -40,4 +40,5 @@ int op_func(stack_t **stack, char *opcode, char *argument, int ln);
 void push_func(stack_t **stack, unsigned int ln);
 void pall_func(stack_t **stack, unsigned int ln);
 void pint_func(stack_t **stack, unsigned int ln);
+void free_stack(stack_t **stack);
 #endif

@@ -13,6 +13,7 @@ void push_func(stack_t **stack, unsigned int ln)
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 	if (*stack != NULL)
@@ -22,6 +23,7 @@ void push_func(stack_t **stack, unsigned int ln)
 	if (argument == NULL)
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", ln);
+		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 	if (argument[0] == '-')
@@ -33,6 +35,7 @@ void push_func(stack_t **stack, unsigned int ln)
 		if (isdigit(argument[i]) == 0)
 		{
 			fprintf(stderr, "L%d: usage: push integer\n", ln);
+			free_stack(stack);
 			exit(EXIT_FAILURE);
 		}
 	}
