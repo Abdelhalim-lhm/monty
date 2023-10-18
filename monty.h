@@ -41,4 +41,5 @@ void push_func(stack_t **stack, unsigned int ln);
 void pall_func(stack_t **stack, unsigned int ln);
 void pint_func(stack_t **stack, unsigned int ln);
 void free_stack(stack_t **stack);
+void pop_func(stack_t **stack, unsigned int ln);
 #endif

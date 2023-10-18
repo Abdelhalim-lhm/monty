@@ -15,6 +15,7 @@ int op_func(stack_t **stack, char *opcode,
 		{"push", push_func},
 		{"pall", pall_func},
 		{"pint", pint_func},
+		{"pop", pop_func},
 		{NULL, NULL},
 		};
 
@@ -33,6 +34,7 @@ int op_func(stack_t **stack, char *opcode,
 	if (opcode && operation[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
+		free(opcode);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
