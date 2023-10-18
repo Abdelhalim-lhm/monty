@@ -34,6 +34,8 @@ int main(int argc, char *argv[])
 			exit(EXIT_FAILURE);
 		}
 		opcode = strtok(line, " \n\t");
+		if (opcode == NULL)
+			continue;
 		argument = strtok(NULL, " \n\t");
 		op_func(&stack, opcode, argument, ln);
 	}

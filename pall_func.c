@@ -9,6 +9,7 @@
 void pall_func(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	stack_t *tmp;
+
 	tmp = *stack;
 
 	if (tmp == NULL)
