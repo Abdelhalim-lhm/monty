@@ -14,6 +14,7 @@ int op_func(stack_t **stack, char *opcode,
 	instruction_t operation[] = {
 		{"push", push_func},
 		{"pall", pall_func},
+		{"pint", pint_func},
 		{NULL, NULL},
 		};
 
