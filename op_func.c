@@ -30,6 +30,10 @@ int op_func(stack_t **stack, char *opcode,
 		i++;
 		}
 	}
-	fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
-	exit(EXIT_FAILURE);
+	if (opcode && operation[i].opcode == NULL)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
+		exit(EXIT_FAILURE);
+	}
+	return (1);
 }
