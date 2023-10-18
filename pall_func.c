@@ -6,14 +6,16 @@
  * @ln: line number executed
  * Return : nothing
  */
-void pall_func(stack_t **stack, unsigned int ln)
+void pall_func(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
-	(void)ln;
-	if (*stack == NULL)
+	stack_t *tmp;
+	tmp = *stack;
+
+	if (tmp == NULL)
 		return;
-	while (*stack)
+	while (tmp)
 	{
-		printf("%d\n", (*stack)->n);
-		*stack = (*stack)->next;
+		printf("%d\n", tmp->n);
+		tmp = tmp->next;
 	}
 }

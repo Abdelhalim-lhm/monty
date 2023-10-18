@@ -8,16 +8,15 @@
 void push_func(stack_t **stack, __attribute__((unused))unsigned int ln)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
-
+	
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	if (stack == NULL)
+	if(*stack != NULL)
 	{
-		*stack = new_node;
-		return;
+		(*stack)->prev = new_node;
 	}
 	new_node->n = atoi(argument);
 	new_node->next = *stack;

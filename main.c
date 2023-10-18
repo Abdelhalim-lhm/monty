@@ -8,7 +8,7 @@ char *argument = NULL;
  */
 int main(int argc, char *argv[])
 {
-	int  ln = 0;
+	int  ln;
 	char *line = NULL, *opcode;
 	size_t len = 0;
 	stack_t *stack = NULL;
@@ -26,14 +26,13 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "Error: Can't open file %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (getline(&line, &len, fn) > 0)
+	for (ln = 1 ; getline(&line, &len, fn) > 0; ln++)
 	{
 		if (line == NULL)
 		{
 			fprintf(stderr, "Error: malloc failed\n");
 			exit(EXIT_FAILURE);
 		}
-		ln++;
 		opcode = strtok(line, " \n\t");
 		argument = strtok(NULL, " \n\t");
 		op_func(&stack, opcode, argument, ln);
