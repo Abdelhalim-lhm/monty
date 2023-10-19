@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 
 	if (fn == NULL || argv[1] == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	for (ln = 1 ; getline(&line, &len, fn) > 0; ln++)
