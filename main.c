@@ -40,7 +40,14 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
 		argument = strtok(NULL, " \n\t");
-		op_func(&stack, opcode, line, fn, ln);
+		if (strcmp(opcode, "swap") == 0)
+		{
+			swap_func(&stack, ln);
+		}
+		else
+		{
+			op_func(&stack, opcode, line, fn, ln);
+		}
 	}
 	free(line);
 	free_stack(&stack);
