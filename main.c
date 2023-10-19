@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
 		argument = strtok(NULL, " \n\t");
 		if (strcmp(opcode, "div") == 0)
 		{
-			div_func(&stack, "div");
+			div_func(&stack, ln);
 		}
 		else if (strcmp(opcode, "sub") == 0)
 		{
