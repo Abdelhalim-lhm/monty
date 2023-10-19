@@ -40,7 +40,11 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
 		argument = strtok(NULL, " \n\t");
-		if (strcmp(opcode, "add") == 0)
+		if (strcmp(opcode, "nop") == 0)
+		{
+			nop_func(&stack, ln);
+		}
+		else if (strcmp(opcode, "add") == 0)
 		{
 			add_func(&stack, ln);
 		}

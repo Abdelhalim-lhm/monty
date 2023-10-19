@@ -45,4 +45,5 @@ void free_stack(stack_t **stack);
 void pop_func(stack_t **stack, unsigned int ln);
 void swap_func(stack_t **stack, unsigned int ln);
 void add_func(stack_t **stack, unsigned int ln);
+void nop_func(stack_t **stack, unsigned int ln);
 #endif
