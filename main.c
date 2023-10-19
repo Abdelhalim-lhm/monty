@@ -40,7 +40,11 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
 		argument = strtok(NULL, " \n\t");
-		if (strcmp(opcode, "sub") == 0)
+		if (strcmp(opcode, "div") == 0)
+		{
+			div_func(&stack, "div");
+		}
+		else if (strcmp(opcode, "sub") == 0)
 		{
 			sub_func(&stack, ln);
 		}

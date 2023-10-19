@@ -47,4 +47,5 @@ void swap_func(stack_t **stack, unsigned int ln);
 void add_func(stack_t **stack, unsigned int ln);
 void nop_func(stack_t **stack, unsigned int ln);
 void sub_func(stack_t **stack, unsigned int ln);
+void div_func(stack_t **stack, unsigned int ln);
 #endif
