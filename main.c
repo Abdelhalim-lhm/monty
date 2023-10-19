@@ -40,7 +40,11 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
 		argument = strtok(NULL, " \n\t");
-		if (strcmp(opcode, "swap") == 0)
+		if (strcmp(opcode, "add") == 0)
+		{
+			add_func(&stack, ln);
+		}
+		else if (strcmp(opcode, "swap") == 0)
 		{
 			swap_func(&stack, ln);
 		}
