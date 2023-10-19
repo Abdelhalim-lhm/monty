@@ -36,6 +36,8 @@ int main(int argc, char *argv[])
 			fclose(fn);
 			exit(EXIT_FAILURE);
 		}
+		if (line[0] == '#')
+			continue;
 		opcode = strtok(line, " \n\t");
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
