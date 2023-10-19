@@ -3,7 +3,8 @@
  * op_func - summon the function associed to the opcode given
  * @stack: head of the stack
  * @opcode: the opcode instruction
- * @argument: value of the opcode
+ * @line: getline allocation
+ * @fn: file name
  * @ln: line number executed
  * Return: 0 on success
  */
