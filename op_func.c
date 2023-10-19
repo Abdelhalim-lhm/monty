@@ -8,7 +8,7 @@
  * Return: 0 on success
  */
 int op_func(stack_t **stack, char *opcode,
-	char *line,FILE *fn, int ln)
+	char *line, FILE *fn, int ln)
 {
 	int i = 0;
 	instruction_t operation[] = {
