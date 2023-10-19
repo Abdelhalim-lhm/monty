@@ -40,7 +40,11 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
 		argument = strtok(NULL, " \n\t");
-		if (strcmp(opcode, "mul") == 0)
+		if (strcmp(opcode, "mod") == 0)
+		{
+			mod_func(&stack, ln);
+		}
+		else if (strcmp(opcode, "mul") == 0)
 		{
 			mul_func(&stack, ln);
 		}
