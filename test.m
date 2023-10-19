@@ -1,5 +1,4 @@
-push a 
-pint
+test 
 push 2
 pint
 push 3

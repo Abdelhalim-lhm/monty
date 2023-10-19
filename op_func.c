@@ -8,7 +8,7 @@
  * Return: 0 on success
  */
 int op_func(stack_t **stack, char *opcode,
-	__attribute__((unused))char *argument, int ln)
+	char *line,FILE *fn, int ln)
 {
 	int i = 0;
 	instruction_t operation[] = {
@@ -34,9 +34,13 @@ int op_func(stack_t **stack, char *opcode,
 	if (opcode && operation[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
-		free(opcode);
 		free_stack(stack);
+		free(line);
+		fclose(fn);
 		exit(EXIT_FAILURE);
 	}
+	free_stack(stack);
+	free(line);
+	fclose(fn);
 	return (1);
 }

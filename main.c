@@ -33,13 +33,14 @@ int main(int argc, char *argv[])
 			fprintf(stderr, "Error: malloc failed\n");
 			free(line);
 			free_stack(&stack);
+			fclose(fn);
 			exit(EXIT_FAILURE);
 		}
 		opcode = strtok(line, " \n\t");
 		if (opcode == NULL || opcode[0]== '#')
 			continue;
 		argument = strtok(NULL, " \n\t");
-		op_func(&stack, opcode, argument, ln);
+		op_func(&stack, opcode, line, fn, ln);
 	}
 	free(line);
 	free_stack(&stack);
