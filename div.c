@@ -11,7 +11,7 @@ void div_func(stack_t **stack, unsigned int ln)
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", ln);
+		fprintf(stderr, "L%u: can't div, stack too short\n", ln);
 		free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
