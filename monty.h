@@ -49,4 +49,5 @@ void nop_func(stack_t **stack, unsigned int ln);
 void sub_func(stack_t **stack, unsigned int ln);
 void div_func(stack_t **stack, unsigned int ln);
 void mul_func(stack_t **stack, unsigned int ln);
+void mod_func(stack_t **stack, unsigned int ln);
 #endif
