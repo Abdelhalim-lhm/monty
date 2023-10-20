@@ -42,38 +42,7 @@ int main(int argc, char *argv[])
 		if (opcode == NULL || (opcode != NULL && opcode[0] == '#'))
 			continue;
 		argument = strtok(NULL, " \n\t");
-		if (strcmp(opcode, "mod") == 0)
-		{
-			mod_func(&stack, ln);
-		}
-		else if (strcmp(opcode, "mul") == 0)
-		{
-			mul_func(&stack, ln);
-		}
-		else if (strcmp(opcode, "div") == 0)
-		{
-			div_func(&stack, ln);
-		}
-		else if (strcmp(opcode, "sub") == 0)
-		{
-			sub_func(&stack, ln);
-		}
-		else if (strcmp(opcode, "nop") == 0)
-		{
-			nop_func(&stack, ln);
-		}
-		else if (strcmp(opcode, "add") == 0)
-		{
-			add_func(&stack, ln);
-		}
-		else if (strcmp(opcode, "swap") == 0)
-		{
-			swap_func(&stack, ln);
-		}
-		else
-		{
-			op_func(&stack, opcode, line, fn, ln);
-		}
+		op_func(&stack, opcode, line, fn, ln);
 	}
 	free(line);
 	free_stack(&stack);

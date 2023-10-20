@@ -13,11 +13,13 @@ int op_func(stack_t **stack, char *opcode,
 {
 	int i = 0;
 	instruction_t operation[] = {
-		{"push", push_func},
-		{"pall", pall_func},
-		{"pint", pint_func},
-		{"pop", pop_func},
-		{NULL, NULL},
+		{"push", push_func}, {"pall", pall_func},
+		{"pint", pint_func}, {"pop", pop_func},
+		{"swap", swap_func}, {"add", add_func},
+		{"nop", nop_func}, {"sub", sub_func},
+		{"div", div_func}, {"mul", mul_func},
+		{"mod", mod_func}, {"pchar", pchar_func},
+		{"pstr", pstr_func}, {NULL, NULL},
 		};
 
 	if (opcode != NULL)
